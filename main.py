@@ -43,3 +43,12 @@ class Catalog(TextFile):  # possibly redundant class
 	def __init__(self, name):
 		super().__init__(name)
 		pass
+
+
+def main():
+	"""Main loop."""
+	pass
+
+
+if __name__ == '__main__':
+	main()
