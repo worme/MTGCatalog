@@ -32,10 +32,10 @@ class Card:
 		self.name = name
 
 	def get_name(self):
-		pass
+		return self.name
 
-	def set_name(self):
-		pass
+	def set_name(self, name):
+		self.name = name
 
 
 class Catalog(TextFile):  # possibly redundant class
