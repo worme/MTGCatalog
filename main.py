@@ -6,22 +6,25 @@
 
 class TextFile:
 	"""Represents an instance of a text file."""
-	def __init__(self, file_path, previous_content):
+	def __init__(self, file_path):
 		self.file_path = file_path
-		self.previous_content = previous_content
 
-	def read_file(self, file_path):
+	def read_file(self, file_name):
 		"""Reads a text file."""
 		try:
-			with open(file_path, 'r') as file:
-				self.previous_content = file.read()
+			with open(file_name, 'r') as file:
+				print(f"Reading the file called {file_name} ...")
+				for line in file:
+					print(line.strip())
 		except FileNotFoundError:
 			print("The file was not found.")
+			print(f"Creating a new file called {file_name} ...")
+			self.write_file(file_name)
 
-	def write_file(self, file, card):
+	def write_file(self, file):  # card
 		"""Writes to a text file."""
 		with open(file, 'w') as outfile:
-			outfile.write(self.previous_content + '\n' + card)
+			outfile.write("test")  #  self.previous_content + '\n' + card
 
 	def set_file(self, file_path):
 		"""Opens a file on the user's computer."""
@@ -42,6 +45,16 @@ class Card:
 
 def main():
 	"""Main loop."""
+
+	# --------------- tests --------------------
+
+	# read
+	file = input("Enter the file name: ")
+	file_obj = TextFile(file)
+	file_obj.read_file(file)
+
+	# write
+	# file_obj.write_file("This is a test doc!")
 
 
 if __name__ == '__main__':
