@@ -6,24 +6,26 @@
 
 class TextFile:
 	"""Represents an instance of a text file."""
-	def __init__(self, name):
-		self.name = name
+	def __init__(self, file_path, previous_content):
+		self.file_path = file_path
+		self.previous_content = previous_content
 
-	def read_file(self):
+	def read_file(self, file_path):
 		"""Reads a text file."""
-		pass
+		try:
+			with open(file_path, 'r') as file:
+				self.previous_content = file.read()
+		except FileNotFoundError:
+			print("The file was not found.")
 
-	def write_file(self):
+	def write_file(self, file, card):
 		"""Writes to a text file."""
-		pass
+		with open(file, 'w') as outfile:
+			outfile.write(self.previous_content + '\n' + card)
 
-	def print_file(self):
-		"""Prints a text file."""
-		pass
-
-	def open_file(self):
+	def set_file(self, file_path):
 		"""Opens a file on the user's computer."""
-		pass
+		self.file_path = file_path
 
 
 class Card:
@@ -38,16 +40,8 @@ class Card:
 		self.name = name
 
 
-class Catalog(TextFile):  # possibly redundant class
-	"""Represent an instance of a catalog."""
-	def __init__(self, name):
-		super().__init__(name)
-		pass
-
-
 def main():
 	"""Main loop."""
-	pass
 
 
 if __name__ == '__main__':
