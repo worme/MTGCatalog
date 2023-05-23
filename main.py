@@ -45,11 +45,20 @@ class Card:
 
 def main():
 	"""Main loop."""
-
+	print("")
+	print(" _|      _|  _|_|_|_|_|    _|_|_|        _|_|_|              _|                _|")
+	print(" _|_|  _|_|      _|      _|            _|          _|_|_|  _|_|_|_|    _|_|_|  _|    _|_|      _|_|_|")
+	print(" _|  _|  _|      _|      _|  _|_|      _|        _|    _|    _|      _|    _|  _|  _|    _|  _|    _|")
+	print(" _|      _|      _|      _|    _|      _|        _|    _|    _|      _|    _|  _|  _|    _|  _|    _|")
+	print(" _|      _|      _|        _|_|_|        _|_|_|    _|_|_|      _|_|    _|_|_|  _|    _|_|      _|_|_|")
+	print("                                                                                                   _|")
+	print("                                                                                               _|_|  ")
+	print("")
+	file = input("Enter the name of the text (.txt) file you wish to open, edit, or create: ")
 	# --------------- tests --------------------
 
 	# read
-	file = input("Enter the file name: ")
+
 	file_obj = TextFile(file)
 	file_obj.read_file(file)
 
